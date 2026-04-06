@@ -1,95 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rojan KC</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rojan Khatri KC | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h2>Rojan KC</h2>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<header class="header">
+  <nav class="nav">
+    <div class="logo">RK</div>
+    <ul id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu" id="menuBtn">☰</div>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Hi, I'm Rojan KC</h1>
-  <p>Computer Science Student & Aspiring Developer</p>
-  <button onclick="toggleDark()">Toggle Mode</button>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm <span>Rojan Khatri KC</span></h1>
+    <p>Computer Science Student | 2nd Year | Westminster College, Lalitpur</p>
+    <div class="hero-buttons">
+      <a href="cv.pdf" download class="btn primary">Download CV</a>
+      <a href="#projects" class="btn secondary">View Projects</a>
+    </div>
+  </div>
 </section>
 
-<section id="about" class="card">
-  <h2>About Me</h2>
-  <p>
-    I am currently studying BSc Computer Science at Westminster College.
-    I enjoy building websites and learning programming languages.
-    I am working to improve my skills in software and web development.
-  </p>
-</section>
-
-<section id="education" class="card">
-  <h2>Education</h2>
-  <ul>
-    <li>BSc Computer Science – Westminster College</li>
-    <li>+2 – DAV College</li>
-    <li>SEE – Holy Temple School</li>
-  </ul>
-</section>
-
-<section id="skills" class="card">
-  <h2>Skills</h2>
-  <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>Java</span>
-    <span>JavaScript</span>
-    <span>Python</span>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I am a Computer Science student passionate about web development, programming,
+      and building clean, efficient digital solutions. I enjoy learning modern technologies
+      and improving my problem-solving skills.    </p>
   </div>
 </section>
 
-<section id="projects" class="card">
-  <h2>Projects</h2>
+<!-- PROJECTS -->
+<section id="projects" class="section alt">
+  <div class="container">
+    <h2>Projects</h2>
+    <div class="grid">
 
-  <div class="project-grid">
-    <div class="project">
-      <h3>Pizza Ordering System</h3>
-      <p>GUI app using Tkinter for ordering pizza.</p>
-    </div>
+      <div class="card">
+        <h3>Portfolio Website</h3>
+        <p>Modern responsive personal portfolio using HTML, CSS, JS.</p>
+      </div>
 
-    <div class="project">
-      <h3>Calculator</h3>
-      <p>Basic calculator using Python.</p>
-    </div>
+      <div class="card">
+        <h3>Todo App</h3>
+        <p>Task manager with local storage functionality.</p>
+      </div>
 
-    <div class="project">
-      <h3>Simple Website</h3>
-      <p>Website created using HTML and CSS.</p>
+      <div class="card">
+        <h3>Calculator</h3>
+        <p>Simple calculator built using JavaScript logic.</p>
+      </div>
+
     </div>
   </div>
-
 </section>
 
-<section id="contact" class="card">
-  <h2>Contact</h2>
-  <p>Email: rojan@example.com</p>
-  <p>Location: Kathmandu, Nepal</p>
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button class="btn primary" type="submit">Send Message</button>
+    </form>
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 Rojan KC</p>
+<footer class="footer">
+  <p>© 2026 Rojan Khatri KC. All rights reserved.</p>
 </footer>
 
-<script>
-function toggleDark() {
-  document.body.classList.toggle("dark");
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
