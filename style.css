@@ -1,109 +1,213 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+
+:root{
+  --bg:#0f172a;
+  --card:#111c33;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --accent:#38bdf8;
 }
 
-body {
-  font-family: Arial;
-  background: #f5f5f5;
-  color: #333;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
 }
 
-.dark {
-  background: #121212;
-  color: #eee;
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 40px;
-  background: #222;
-  color: white;
+/* NAV */
+.header{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(15,23,42,0.8);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-header a {
-  color: white;
-  margin-left: 20px;
-  text-decoration: none;
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
 }
 
-header a:hover {
-  color: orange;
+.nav ul{
+  display:flex;
+  gap:25px;
+  list-style:none;
 }
 
-.hero {
-  text-align: center;
-  padding: 70px 20px;
-  background: linear-gradient(to right, #444, #222);
-  color: white;
+.nav a{
+  color:var(--text);
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.hero button {
-  margin-top: 15px;
-  padding: 8px 15px;
-  border: none;
-  background: orange;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
+.nav a:hover{
+  color:var(--accent);
 }
 
-section {
-  padding: 30px;
+.menu{
+  display:none;
+  cursor:pointer;
+  color:white;
 }
 
-.card {
-  background: white;
-  margin: 20px auto;
-  width: 85%;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.logo{
+  font-weight:700;
+  color:var(--accent);
 }
 
-.dark .card {
-  background: #1e1e1e;
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:radial-gradient(circle at top, #1e293b, #0f172a);
+  padding:20px;
 }
 
-.skills span {
-  display: inline-block;
-  background: orange;
-  color: white;
-  padding: 8px 12px;
-  margin: 5px;
-  border-radius: 20px;
-  font-size: 14px;
+.hero h1{
+  font-size:3rem;
 }
 
-.project-grid {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+.hero span{
+  color:var(--accent);
 }
 
-.project {
-  flex: 1 1 30%;
-  background: #fafafa;
-  padding: 15px;
-  border-radius: 8px;
-  transition: 0.3s;
+.hero p{
+  color:var(--muted);
+  margin-top:10px;
 }
 
-.project:hover {
-  transform: translateY(-5px);
-  background: orange;
-  color: white;
+.hero-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
 }
 
-.dark .project {
-  background: #2a2a2a;
+.btn{
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  transition:0.3s;
+  display:inline-block;
 }
 
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #222;
-  color: white;
+.primary{
+  background:var(--accent);
+  color:#000;
 }
+
+.primary:hover{
+  opacity:0.8;
+}
+
+.secondary{
+  border:1px solid var(--accent);
+  color:var(--accent);
+}
+
+.secondary:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* SECTIONS */
+.section{
+  padding:100px 20px;
+}
+
+.alt{
+  background:#0b1220;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2rem;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  max-width:500px;
+  margin:auto;
+}
+
+input,textarea{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#1e293b;
+  color:white;
+}
+
+textarea{
+  min-height:120px;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:20px;
+  background:#0b1220;
+  color:var(--muted);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav ul{
+    display:none;
+    position:absolute;
+    top:60px;
+    right:20px;
+    background:#111c33;
+    flex-direction:column;
+    padding:10px;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+}
+
